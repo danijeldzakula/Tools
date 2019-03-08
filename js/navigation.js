@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 		$('html, body').stop().animate({
 			scrollTop: offsetTop
-		}, 200);
+		}, 400);
 
 		return false;
 	});
