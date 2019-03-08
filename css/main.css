@@ -236,9 +236,9 @@ body, html {
 	left: 0;
 	width: 100%;
 	height: 70px;
-	background-color: rgba(240, 242, 244,0.95);
+	background-color: #fff;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.15);
-	z-index: 11;
+	z-index: 13;
 }
 
 .wrap {
@@ -259,34 +259,62 @@ body, html {
 .global__header .logo > h1 {
 	color: #999;
 	font-weight: 400;
-	font-size: 24px;
+	font-size: 18px;
 }
+@media (min-width: 768px) {
+	.global__header .logo > h1 {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 992px) {
+	.global__header .logo > h1 {
+		font-size: 22px;
+	}
+}
+
+@media (min-width: 1080px) {
+	.global__header .logo > h1 {
+		font-size: 24px;
+	}
+}
+
+
 .global__header .menu {
-	margin-right: 7px;
 	width: 70px;
 	border: 0;
 	outline: 0;
 	background-color: transparent;
 	cursor: pointer;
 	display: block;
+	opacity: 1;
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+/*
+.global__header .menu.is-open {
+	opacity: 0;
+	z-index: -1;
+}*/
 @media (min-width: 992px) {
 	.global__header .menu {
 		display: none;
 	}
 }
+
+
 .global__header .menu > span {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: right; 
 	color: #999;
 	vertical-align: middle;  
 }
 
-
-
-
-
+@media (min-width: 768px) {
+	.global__header .menu > span {
+		text-align: center;
+	}
+}
 
 
 
@@ -302,6 +330,7 @@ body, html {
 	clear: both;
 }
 
+/*
 .global__sidebar:after {
 	position: absolute;
 	top: 0;
@@ -316,8 +345,40 @@ body, html {
 	background-color: rgba(255,255,255,.75);
 	z-index: -1;
 }
+*/
 
-.global__sidebar:before {
+
+.global__sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+	height: calc(100% - 70px);
+
+    background-color: #f8f9fa;
+    background-image: url(https://picsum.photos/400/1080?image=931);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    float: left;
+    overflow-y: auto;
+    display: block;
+    z-index: 11;
+}
+.global__sidebar {
+    transform: translateX(-100%);
+	transition: all 0.3s cubic-bezier(.25,.8,.25,1);	
+}
+.global__sidebar > .overlay {
+	min-height: 100%;
+	background-color: rgba(255,255,255,.75);
+}
+.global__sidebar > .overlay > .global__nav {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.global__sidebar > .overlay:before {
 	position: absolute;
 	content: '';
 	clear: both;
@@ -330,30 +391,8 @@ body, html {
 	background-color: #f0f2f4;
 	z-index: 1;
 }
-
-.global__sidebar {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    bottom: 0;
-	height: auto;
-
-    background-color: #f8f9fa;
-    background-image: url(https://picsum.photos/400/1080?image=931);
-    background-position: center;
-    background-size: cover;
-    float: left;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    overflow-y: auto;
-    display: block;
-    z-index: 10;
-}
-.global__sidebar {
-    transform: translateX(-100%);
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);	
-}
 .global__sidebar.is-open {
+	z-index: 12;
 	transform: translateX(0);
 }
 
@@ -377,6 +416,7 @@ body, html {
 @media (min-width: 992px) {
 	.global__sidebar,
 	.global__sidebar.is-open {
+		z-index: 10;
 		width: 28%;
 		transform: translateX(0);
 	}
@@ -550,13 +590,14 @@ body, html {
 	left: 0;
 	width: 100%;
 	height: auto;
-	background-color: white;
-	z-index: -1;
+	background-color: rgb(220,200,200);
+	z-index: 11;
+	visibility: hidden;
 	opacity: 0;
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .menu-overlay.is-open {
-	z-index: 9;
+	visibility: visible;
 	opacity: 0.25;
 }
 
@@ -644,7 +685,7 @@ body, html {
 
 
 .global__footer {
-	background-color: rgb(240, 242, 244);
+	background-color: #fff;
 }
 .global__footer .copyright {
 	text-align: center;
@@ -652,13 +693,14 @@ body, html {
 	font-size: 1.4rem;
 	font-weight: 500;
 	color: #999;
-	padding: 25px 0 20px 0;
+	padding: 50px 0 30px 0;
 }
 
 
 
 .global__footer .footer-ribbon {
-    background-color: #f8f9fa;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
     position: absolute;
     left: 15px;
     margin: -16px 0 25px;

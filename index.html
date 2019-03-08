@@ -47,44 +47,44 @@
 
 	<main class="global__main">
 		<aside class="global__sidebar">
-			<div class="container-full">
+			<div class="container-full overlay">
 				<nav class="global__nav">
 					<ul>
 						<li>
 							<a href="#1" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Getting started</span>
 							</a>
 						</li>
 						<li>
 							<a href="#2" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Introduction</span>
 							</a>
 						</li>
 						<li>
 							<a href="#3" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Download</span>
 							</a>
 						</li>
 						<li>
 							<a href="#4" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Contents</span>
 							</a>
 						</li>
 						<li>
 							<a href="#5" class="navigation__link">
-								<span>Navigation item</span>
+								<span>JavaScript</span>
 							</a>
 						</li>
 						<li>
 							<a href="#6" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Webpack</span>
 							</a>
 						</li>	
 						<li>
 							<a href="#7" class="navigation__link">
-								<span>Navigation item</span>
+								<span>Accessibility</span>
 							</a>
-						</li>																																				
+						</li>																				
 					</ul>
 				</nav>
 			</div>
@@ -119,7 +119,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Getting started</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -160,7 +160,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Introduction</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -201,7 +201,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Download</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -242,7 +242,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Contents</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -283,7 +283,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">JavaScript</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -324,7 +324,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Webpack</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -365,7 +365,7 @@
 				<div class="container">
 					<div class="thumbnail">
 						<header class="thumbnail-header">
-							<h1 class="heading-title">Heading</h1>
+							<h1 class="heading-title">Accessibility</h1>
 							<p class="description-title">Description</p>
 						</header>
 
@@ -439,18 +439,21 @@
                 $('.global__sidebar').toggleClass('is-open');
                 $('.global__article').toggleClass('is-open');
                 $('.menu-overlay').toggleClass('is-open');
+                $(this).toggleClass('is-open');
             });
             $('.menu-overlay').on('click', function(event) {
             	event.preventDefault();
             	$(this).removeClass('is-open');
                 $('.global__sidebar').removeClass('is-open');
-                $('.global__article').removeClass('is-open');            	
+                $('.global__article').removeClass('is-open');   
+                $('.menu').removeClass('is-open');         	
             });
 		    $(document).keydown(function(e){
 		        if(e.keyCode == 27) {
 	                $('.global__sidebar').removeClass('is-open');
 	                $('.global__article').removeClass('is-open');
 	            	$('.menu-overlay').removeClass('is-open');
+	            	$('.menu').removeClass('is-open'); 
 		        }
 		    });            
         });    	
