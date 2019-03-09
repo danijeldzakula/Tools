@@ -531,6 +531,7 @@ body, html {
 .global__nav ul li.is-active a {
 	color: rgba(0,0,0,1);
 	background-color: #fff;
+	text-indent: 1em;
 }
 
 
