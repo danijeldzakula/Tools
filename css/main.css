@@ -489,6 +489,13 @@ body, html {
 
 .global__nav ul li {
 	position: relative;
+	margin-bottom: 7px;
+}
+.global__nav ul li:first-child a {
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 600;
+	color: #777;
 }
 .global__nav ul li a {
 	position: relative;
@@ -500,6 +507,7 @@ body, html {
 	color: rgba(0,0,0,.65);
 	background-color: transparent;
 	padding: 4px 10px;
+	border-radius: 0 40px 40px 0;
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .global__nav ul li a:before {
@@ -511,7 +519,7 @@ body, html {
 	bottom: 0;
 	left: 0;
 	width: 3px;
-	background-color: #ccc;
+	background-color: #975997;
 	opacity: 0;
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
