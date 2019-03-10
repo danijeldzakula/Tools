@@ -18,7 +18,6 @@
 
             pre[i].appendChild(button);
         }
-        console.log(i);
     };
 
     // Run Clipboard

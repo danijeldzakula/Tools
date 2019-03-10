@@ -357,7 +357,6 @@ body, html {
     background-color: #f8f9fa;
     background-image: url(https://picsum.photos/400/1080?image=931);
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     float: left;

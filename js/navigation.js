@@ -158,13 +158,10 @@ $(document).ready(function() {
 
         var currentTop = $(window).scrollTop() + globalHeaderPlus + 10;
 
-        console.log(currentTop);
         var elems = $('.global__section');        
         elems.each(function(index){
             var elemTop   = $(this).offset().top;
             var elemBottom    = elemTop + $(this).height();
-
-            console.log(elemTop);
             
             if(currentTop >= elemTop && currentTop <= elemBottom){
                 var id      = $(this).attr('id');
@@ -175,6 +172,14 @@ $(document).ready(function() {
 
         });           
     });
+    
+
+    var thumb = $('.thumbnail');
+
+    thumb.each(function(index) {
+        console.log(index);
+    });
+
 });
 
 
